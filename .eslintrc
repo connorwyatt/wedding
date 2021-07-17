@@ -1,3 +1,73 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "standard-with-typescript",
+    "standard-jsx",
+    "standard-react",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:array-func/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:optimize-regex/recommended",
+    "plugin:prettier/recommended",
+    "plugin:promise/recommended",
+    "plugin:sonarjs/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "import/no-default-export": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "pages/**/*"
+      ],
+      "rules": {
+        "import/no-default-export": "off",
+        "import/no-anonymous-default-export": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.styles.ts"
+      ],
+      "rules": {
+        "sonarjs/no-nested-template-literals":"off"
+      }
+    },
+    {
+      "files": [
+        "next-env.d.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/triple-slash-reference": "off"
+      }
+    }
+  ]
 }
