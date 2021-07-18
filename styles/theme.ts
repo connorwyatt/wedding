@@ -13,7 +13,7 @@ const paragraphText: TextStyle = {
 const titleFontFamily = '"Flanella", cursive'
 const titleText: TextStyle = {
   fontFamily: titleFontFamily,
-  fontSize: '4rem',
+  fontSize: '5rem',
   fontStyle: 'normal',
   fontWeight: '400',
   letterSpacing: 'normal',
