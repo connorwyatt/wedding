@@ -3,6 +3,17 @@ export interface Colors {
   paper: string
 }
 
+export interface ShadowStyle {
+  xOffset: string
+  yOffset: string
+  blur: string
+  color: string
+}
+
+export interface Shadows {
+  paper: ShadowStyle
+}
+
 export interface TextStyle {
   fontFamily: string
   fontSize: string
@@ -19,6 +30,7 @@ export interface Typography {
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: Colors
+    shadows: Shadows
     typography: Typography
   }
 }
