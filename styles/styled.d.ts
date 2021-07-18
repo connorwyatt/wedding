@@ -1,3 +1,8 @@
+export interface Colors {
+  background: string
+  paper: string
+}
+
 export interface TextStyle {
   fontFamily: string
   fontSize: string
@@ -13,6 +18,7 @@ export interface Typography {
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    colors: Colors
     typography: Typography
   }
 }

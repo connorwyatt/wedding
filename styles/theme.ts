@@ -20,6 +20,10 @@ const titleText: TextStyle = {
 }
 
 export const theme: DefaultTheme = {
+  colors: {
+    background: '#111111',
+    paper: '#FAFAFA',
+  },
   typography: {
     paragraph: paragraphText,
     title: titleText,

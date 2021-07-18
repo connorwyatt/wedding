@@ -23,6 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     ${({ theme }) => textStyle(theme.typography.paragraph)};
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    background-color: ${({ theme }) => theme.colors.background};
     line-height: 1.25;
     min-height: 100vh;
   }

@@ -1,4 +1,8 @@
 import { FC } from 'react'
-import { Container } from './Layout.styles'
+import { Container, Paper } from './Layout.styles'
 
-export const Layout: FC = ({ children }) => <Container>{children}</Container>
+export const Layout: FC = ({ children }) => (
+  <Container>
+    <Paper>{children}</Paper>
+  </Container>
+)
