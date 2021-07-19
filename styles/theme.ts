@@ -13,7 +13,7 @@ const paragraphText: TextStyle = {
   fontFamily: paragraphFontFamily,
   fontSize: '1rem',
   fontStyle: 'normal',
-  fontWeight: '400',
+  fontWeight: '200',
   letterSpacing: '0.25em',
 }
 
@@ -41,6 +41,15 @@ export const theme: DefaultTheme = {
   },
   typography: {
     paragraph: paragraphText,
+    paragraphEmphasis: {
+      ...paragraphText,
+      fontWeight: '400',
+    },
+    sectionHeading: {
+      ...paragraphText,
+      fontSize: '1.5rem',
+      fontWeight: '200',
+    },
     title: titleText,
   },
 }
