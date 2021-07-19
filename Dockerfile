@@ -8,6 +8,8 @@ RUN npm ci
 
 COPY .eslintrc .prettierrc next-env.d.ts next.config.js tsconfig.json ./
 
+COPY .env ./
+
 COPY public ./public
 COPY config ./config
 COPY styles ./styles
