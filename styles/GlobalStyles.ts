@@ -24,7 +24,8 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${({ theme }) => theme.colors.background};
-    line-height: 1.25;
+    line-height: 1.5;
     min-height: 100vh;
+    text-transform: uppercase;
   }
 `

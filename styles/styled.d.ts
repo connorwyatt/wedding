@@ -24,6 +24,8 @@ export interface TextStyle {
 
 export interface Typography {
   paragraph: TextStyle
+  paragraphEmphasis: TextStyle
+  sectionHeading: SectionHeading
   title: TextStyle
 }
 
