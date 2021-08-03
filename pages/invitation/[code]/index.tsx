@@ -103,18 +103,18 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
 
       {showMap && <Map />}
 
-      <PaddedContainer>
-        <Stack size='large'>
-          {!responseReceived && (
+      {!responseReceived && (
+        <PaddedContainer>
+          <Stack size='large'>
             <SectionText>
               <Link href={`/invitation/${invitation.code}/rsvp`}>
                 <a>RSVP</a>
               </Link>{' '}
               by <Emphasis>{responseRequiredByDate}</Emphasis>
             </SectionText>
-          )}
-        </Stack>
-      </PaddedContainer>
+          </Stack>
+        </PaddedContainer>
+      )}
     </>
   )
 }
