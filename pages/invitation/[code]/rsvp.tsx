@@ -17,7 +17,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   }
 
-  const response = await fetch(`${process.env.WEDDING_INVITATIONS_SERVICE_URL}/invitations?code=${code}`)
+  const response = await fetch(
+    `${process.env.WEDDING_INVITATIONS_SERVICE_URL}/invitations?code=${encodeURIComponent(code)}`,
+  )
 
   if (!response.ok) {
     return {
