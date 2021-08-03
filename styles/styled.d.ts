@@ -1,3 +1,8 @@
+export interface BannerColors {
+  background: string
+  text: string
+}
+
 export interface LinkColors {
   normal: string
   focus: string
@@ -10,6 +15,7 @@ export interface TextColors {
 
 export interface Colors {
   background: string
+  banner: BannerColors
   links: LinkColors
   paper: string
   text: TextColors
@@ -19,10 +25,13 @@ export interface ShadowStyle {
   xOffset: string
   yOffset: string
   blur: string
+  spread?: string
   color: string
+  inset?: boolean
 }
 
 export interface Shadows {
+  banner: ShadowStyle
   buttons: ShadowStyle
   paper: ShadowStyle
 }

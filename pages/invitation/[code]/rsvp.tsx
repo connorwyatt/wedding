@@ -2,6 +2,7 @@ import { format } from 'date-fns'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { FC } from 'react'
+import { PaddedContainer } from 'components/PaddedContainer.styles'
 import { RsvpForm } from 'components/RsvpForm'
 import { Stack } from 'components/Stack'
 import { Title } from 'components/Title'
@@ -35,9 +36,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   }
 
+  const invitation = invitations[0]
+
+  if (invitation.status === 'responseReceived') {
+    return {
+      redirect: {
+        destination: `/invitation/${invitation.code}`,
+        permanent: false,
+        statusCode: 302,
+      },
+    }
+  }
+
   return {
     props: {
-      invitation: invitations[0],
+      invitation: invitation,
       responseRequiredByDate: format(responseRequiredByDate, 'dd.MM.yyyy'),
     },
   }
@@ -54,11 +67,13 @@ const Rsvp: FC<RsvpProps> = ({ invitation }) => (
       <title>RSVP for {invitation.addressedTo} | Connor &amp; Laura's Wedding</title>
     </Head>
 
-    <Stack size='large'>
-      <Title />
+    <PaddedContainer>
+      <Stack size='large'>
+        <Title />
 
-      <RsvpForm invitation={invitation} />
-    </Stack>
+        <RsvpForm invitation={invitation} />
+      </Stack>
+    </PaddedContainer>
   </>
 )
 

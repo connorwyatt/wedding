@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Button } from './Button.styles'
+import { Input } from './Input'
 import { InviteeRsvpFormSection } from './InviteeRsvpFormSection'
 import { RsvpFormValues } from './RsvpFormValues'
 import { SectionText } from './SectionText.styles'
@@ -15,7 +16,7 @@ export interface RsvpFormProps {
 }
 
 export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
-  const { control, handleSubmit } = useForm<RsvpFormValues>()
+  const { control, handleSubmit, register } = useForm<RsvpFormValues>()
   const router = useRouter()
 
   const onSubmit: SubmitHandler<RsvpFormValues> = async (formData) => {
@@ -32,10 +33,25 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack size='standard'>
+      <Stack size='large'>
         {invitation.invitees.map((invitee) => (
           <InviteeRsvpFormSection key={invitee.id} control={control} invitee={invitee} />
         ))}
+
+        <SectionText>
+          <p>
+            We're hoping that there are no issues, but just in case anything changes feel free to let us know how to
+            contact you.
+          </p>
+          <Input
+            formProps={register('contactInformation', {
+              maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
+            })}
+            name='contactInformation'
+            label='Contact information (optional)'
+            type='text'
+          />
+        </SectionText>
 
         <SectionText>
           <Button type='submit'>Respond</Button>

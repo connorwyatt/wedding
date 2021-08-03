@@ -3,6 +3,7 @@ import { Invitee } from './Invitee'
 export interface Invitation {
   id: string
   code: string
+  type: 'fullDay' | 'receptionOnly'
   status: 'created' | 'sent' | 'responseReceived'
   addressedTo: string
   emailAddress: string | null
