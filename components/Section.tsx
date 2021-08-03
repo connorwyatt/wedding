@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const Section: FC<Props> = ({ heading, children }) => (
-  <Stack>
+  <Stack size='standard'>
     <SectionHeading as='h2'>{heading}</SectionHeading>
     {children}
   </Stack>

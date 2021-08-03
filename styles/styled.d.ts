@@ -1,6 +1,18 @@
+export interface LinkColors {
+  normal: string
+  focus: string
+}
+
+export interface TextColors {
+  primary: string
+  secondary: string
+}
+
 export interface Colors {
   background: string
+  links: LinkColors
   paper: string
+  text: TextColors
 }
 
 export interface ShadowStyle {
@@ -11,6 +23,7 @@ export interface ShadowStyle {
 }
 
 export interface Shadows {
+  buttons: ShadowStyle
   paper: ShadowStyle
 }
 
@@ -25,7 +38,8 @@ export interface TextStyle {
 export interface Typography {
   paragraph: TextStyle
   paragraphEmphasis: TextStyle
-  sectionHeading: SectionHeading
+  sectionHeading: TextStyle
+  subtext: TextStyle
   title: TextStyle
 }
 

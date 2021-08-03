@@ -24,8 +24,19 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text.primary};
     line-height: 1.5;
     min-height: 100vh;
-    text-transform: uppercase;
+  }
+
+  a {
+    ${({ theme }) => textStyle(theme.typography.paragraphEmphasis)};
+    color: ${({ theme }) => theme.colors.links.normal};
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: ${({ theme }) => theme.colors.links.focus};
+    }
   }
 `

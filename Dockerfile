@@ -13,6 +13,7 @@ COPY .env ./
 COPY public ./public
 COPY config ./config
 COPY styles ./styles
+COPY models ./models
 COPY components ./components
 COPY pages ./pages
 
