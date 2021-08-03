@@ -1,1 +1,1 @@
-export const REM_IN_PIXELS = 18
+export const REM_IN_PIXELS = 16

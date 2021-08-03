@@ -1,5 +1,6 @@
 import { FC } from 'react'
+import { PaddedContainer } from 'components/PaddedContainer.styles'
 
-const Custom404: FC = () => <>Page not found</>
+const Custom404: FC = () => <PaddedContainer>Page not found</PaddedContainer>
 
 export default Custom404

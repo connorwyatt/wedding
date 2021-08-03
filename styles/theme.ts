@@ -6,10 +6,10 @@ export const white = '#ffffff'
 export const black = '#000000'
 export const transparent = 'transparent'
 
-const linkColor = '#308fff'
+const primaryColor = '#308fff'
 
 const standardShadowColor = transparentize(0.75, black)
-const darkShadowColor = transparentize(0.25, black)
+const darkShadowColor = transparentize(0.5, black)
 
 const paragraphFontFamily = '"Nunito Sans", sans-serif'
 const paragraphText: TextStyle = {
@@ -32,9 +32,13 @@ const titleText: TextStyle = {
 export const theme: DefaultTheme = {
   colors: {
     background: lighten(0.2, black),
+    banner: {
+      background: primaryColor,
+      text: white,
+    },
     links: {
-      normal: linkColor,
-      focus: lighten(0.15, linkColor),
+      normal: primaryColor,
+      focus: lighten(0.15, primaryColor),
     },
     paper: darken(0.02, white),
     text: {
@@ -43,6 +47,14 @@ export const theme: DefaultTheme = {
     },
   },
   shadows: {
+    banner: {
+      xOffset: '0',
+      yOffset: '-1rem',
+      blur: '1rem',
+      spread: '-1rem',
+      color: darkShadowColor,
+      inset: true,
+    },
     buttons: {
       xOffset: '0',
       yOffset: '0.1rem',

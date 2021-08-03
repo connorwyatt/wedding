@@ -5,11 +5,11 @@ export interface InputProps {
   name: string
   label: string
   type: 'text'
-  disabled: boolean
+  disabled?: boolean
   formProps: UseFormRegisterReturn
 }
 
-export const Input: FC<InputProps> = ({ name, label, type, disabled, formProps }) => {
+export const Input: FC<InputProps> = ({ name, label, type, disabled = false, formProps }) => {
   return (
     <>
       <label htmlFor={name}>{label}</label>

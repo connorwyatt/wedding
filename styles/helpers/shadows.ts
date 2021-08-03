@@ -2,8 +2,15 @@ import { getValueAndUnit } from 'polished'
 import { css, SimpleInterpolation } from 'styled-components'
 import { ShadowStyle } from '../styled'
 
-export const boxShadow = ({ blur, xOffset, yOffset, color }: ShadowStyle): SimpleInterpolation => css`
-  box-shadow: ${xOffset} ${yOffset} ${blur} ${color};
+export const boxShadow = ({
+  blur,
+  xOffset,
+  yOffset,
+  spread,
+  color,
+  inset = false,
+}: ShadowStyle): SimpleInterpolation => css`
+  box-shadow: ${inset ? 'inset' : ''} ${xOffset} ${yOffset} ${blur} ${spread} ${color};
 `
 
 export const dropShadow = ({ blur, xOffset, yOffset, color }: ShadowStyle): SimpleInterpolation => {
