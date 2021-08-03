@@ -7,4 +7,5 @@ export const Container = styled(PaddedContainer)`
   ${({ theme }) => textStyle(theme.typography.paragraphEmphasis)};
   background-color: ${({ theme }) => theme.colors.banner.background};
   color: ${({ theme }) => theme.colors.banner.text};
+  text-align: right;
 `
