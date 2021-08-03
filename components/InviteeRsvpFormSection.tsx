@@ -62,11 +62,11 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
 
       <SectionText>
         <Input
-          formProps={register(`invitees.${invitee.id}.dietaryRequirements`, {
+          formProps={register(`invitees.${invitee.id}.dietaryNotes`, {
             maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
           })}
-          name={`invitees.${invitee.id}.dietaryRequirements`}
-          label='Dietary requirements (optional)'
+          name={`invitees.${invitee.id}.dietaryNotes`}
+          label='Dietary notes (optional)'
           type='text'
           disabled={!attending}
         />
