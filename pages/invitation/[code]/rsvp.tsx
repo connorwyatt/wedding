@@ -49,7 +49,7 @@ export interface RsvpProps {
 const Rsvp: FC<RsvpProps> = ({ invitation }) => (
   <>
     <Head>
-      <title>RSVP: {invitation.addressedTo} | Connor &amp; Laura's Wedding</title>
+      <title>RSVP for {invitation.addressedTo} | Connor &amp; Laura's Wedding</title>
     </Head>
 
     <Stack size='large'>
