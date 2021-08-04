@@ -42,7 +42,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
       redirect: {
         destination: `/invitation/${invitation.code}`,
-        permanent: false,
         statusCode: 302,
       },
     }
