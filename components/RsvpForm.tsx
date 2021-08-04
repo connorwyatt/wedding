@@ -38,20 +38,22 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
           <InviteeRsvpFormSection key={invitee.id} control={control} invitee={invitee} />
         ))}
 
-        <SectionText>
-          <p>
+        <Stack size='standard'>
+          <SectionText>
             We're hoping that there are no issues, but just in case anything changes feel free to let us know how to
             contact you.
-          </p>
-          <Input
-            formProps={register('contactInformation', {
-              maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
-            })}
-            name='contactInformation'
-            label='Contact information (optional)'
-            type='text'
-          />
-        </SectionText>
+          </SectionText>
+          <SectionText>
+            <Input
+              formProps={register('contactInformation', {
+                maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
+              })}
+              name='contactInformation'
+              label='Contact information (optional)'
+              type='text'
+            />
+          </SectionText>
+        </Stack>
 
         <SectionText>
           <Button type='submit'>Respond</Button>
