@@ -19,7 +19,7 @@ export const mapRsvpFormValues = (formValues: RsvpFormValues): InvitationRespons
 
     return {
       id,
-      attending: invitee.attending === 'true',
+      attending,
       foodOption: invitee.foodOption,
       dietaryNotes: invitee.dietaryNotes?.length > 0 ? invitee.dietaryNotes : null,
     }
