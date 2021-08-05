@@ -16,8 +16,10 @@ export interface TextColors {
 export interface Colors {
   background: string
   banner: BannerColors
+  error: string
   links: LinkColors
   paper: string
+  separators: string
   text: TextColors
 }
 

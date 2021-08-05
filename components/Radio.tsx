@@ -1,29 +1,36 @@
-import { FC, Fragment } from 'react'
-import { ChangeHandler, UseFormRegisterReturn } from 'react-hook-form'
+import { FC } from 'react'
+import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
+import { ErrorMessage, Input, Label, Option, Options, Text } from './Radio.styles'
 
 export interface RadioProps {
   name: string
+  label: string
   options: Array<{ label: string; value: string }>
   disabled?: boolean
   formProps: UseFormRegisterReturn
+  error?: FieldError | undefined
 }
 
-export const Radio: FC<RadioProps> = ({ name, options, disabled = false, formProps }) => {
+export const Radio: FC<RadioProps> = ({ name, label, options, disabled = false, formProps, error }) => {
   return (
     <>
-      {options.map((option) => (
-        <Fragment key={option.value}>
-          <input
-            {...formProps}
-            type='radio'
-            id={`${name}:${option.value}`}
-            name={name}
-            value={option.value}
-            disabled={disabled}
-          />
-          <label htmlFor={`${name}:${option.value}`}>{option.label}</label>
-        </Fragment>
-      ))}
+      <Text $disabled={disabled}>{label}</Text>
+      <Options>
+        {options.map((option) => (
+          <Option key={option.value}>
+            <Input
+              {...formProps}
+              type='radio'
+              id={`${name}:${option.value}`}
+              name={name}
+              value={option.value}
+              disabled={disabled}
+            />
+            <Label htmlFor={`${name}:${option.value}`}>{option.label}</Label>
+          </Option>
+        ))}
+      </Options>
+      {error != null && <ErrorMessage>{error.message}</ErrorMessage>}
     </>
   )
 }

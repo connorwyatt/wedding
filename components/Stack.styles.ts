@@ -6,12 +6,13 @@ export const Container = styled.div`
 `
 
 interface StackItemProps {
-  $spacing: 'standard' | 'large' | null
+  $spacing: 'small' | 'standard' | 'large' | null
 }
 
 const sizes = {
-  standard: '0.5rem',
-  large: '1rem',
+  small: '0.5rem',
+  standard: '1rem',
+  large: '2rem',
 }
 
 export const StackItem = styled.div<StackItemProps>`
