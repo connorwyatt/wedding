@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { SubmitHandler, useForm, useFormState } from 'react-hook-form'
 import { Button } from './Button.styles'
 import { Input } from './Input'
 import { InviteeRsvpFormSection } from './InviteeRsvpFormSection'
@@ -16,7 +16,14 @@ export interface RsvpFormProps {
 }
 
 export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
-  const { control, handleSubmit, register } = useForm<RsvpFormValues>()
+  const {
+    control,
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    register,
+  } = useForm<RsvpFormValues>({
+    mode: 'onTouched',
+  })
   const router = useRouter()
 
   const onSubmit: SubmitHandler<RsvpFormValues> = async (formData) => {
@@ -35,7 +42,12 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack size='large'>
         {invitation.invitees.map((invitee) => (
-          <InviteeRsvpFormSection key={invitee.id} control={control} invitee={invitee} />
+          <InviteeRsvpFormSection
+            key={invitee.id}
+            control={control}
+            invitee={invitee}
+            errors={errors?.invitees?.[invitee.id]}
+          />
         ))}
 
         <Stack size='standard'>
@@ -43,20 +55,22 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
             We're hoping that there are no issues, but just in case anything changes feel free to let us know how to
             contact you.
           </SectionText>
-          <SectionText>
-            <Input
-              formProps={register('contactInformation', {
-                maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
-              })}
-              name='contactInformation'
-              label='Contact information (optional)'
-              type='text'
-            />
-          </SectionText>
+
+          <Input
+            formProps={register('contactInformation', {
+              maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
+            })}
+            name='contactInformation'
+            label='Contact information (optional)'
+            type='text'
+            error={errors?.contactInformation}
+          />
         </Stack>
 
         <SectionText>
-          <Button type='submit'>Respond</Button>
+          <Button type='submit' disabled={isSubmitting}>
+            {isSubmitting ? 'Responding...' : 'Respond'}
+          </Button>
         </SectionText>
       </Stack>
     </form>

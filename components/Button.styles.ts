@@ -12,4 +12,9 @@ export const Button = styled.button`
   cursor: pointer;
   margin: 0;
   padding: 0.25rem 2rem;
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.3;
+  }
 `

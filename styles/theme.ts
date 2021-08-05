@@ -36,11 +36,13 @@ export const theme: DefaultTheme = {
       background: primaryColor,
       text: white,
     },
+    error: '#db3131',
     links: {
       normal: primaryColor,
       focus: lighten(0.15, primaryColor),
     },
     paper: darken(0.02, white),
+    separators: transparentize(0.85, black),
     text: {
       primary: transparentize(0.3, black),
       secondary: transparentize(0.5, black),

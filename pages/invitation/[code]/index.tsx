@@ -4,10 +4,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { FC, useState } from 'react'
 import { Button } from 'components/Button.styles'
-import { FullWidthContainer } from 'components/FullWidthContainer.styles'
 import { Map } from 'components/Map'
 import { PaddedContainer } from 'components/PaddedContainer.styles'
-import { Emphasis, SectionHeading, SectionText, Subtext } from 'components/SectionText.styles'
+import { Emphasis, SectionHeading, SectionText } from 'components/SectionText.styles'
 import { Stack } from 'components/Stack'
 import { ThanksForRsvpBanner } from 'components/ThanksForRsvpBanner'
 import { Title } from 'components/Title'
@@ -66,7 +65,7 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
       {responseReceived && <ThanksForRsvpBanner />}
 
       <PaddedContainer>
-        <Stack size='large'>
+        <Stack size='standard'>
           <Title />
 
           <SectionText>
@@ -105,14 +104,12 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
 
       {!responseReceived && (
         <PaddedContainer>
-          <Stack size='large'>
-            <SectionText>
-              <Link href={`/invitation/${invitation.code}/rsvp`}>
-                <a>RSVP</a>
-              </Link>{' '}
-              by <Emphasis>{responseRequiredByDate}</Emphasis>
-            </SectionText>
-          </Stack>
+          <SectionText>
+            <Link href={`/invitation/${invitation.code}/rsvp`}>
+              <a>RSVP</a>
+            </Link>{' '}
+            by <Emphasis>{responseRequiredByDate}</Emphasis>
+          </SectionText>
         </PaddedContainer>
       )}
     </>

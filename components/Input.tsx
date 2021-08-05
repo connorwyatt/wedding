@@ -1,5 +1,6 @@
-import { FC } from 'react'
-import { UseFormRegisterReturn } from 'react-hook-form'
+import React, { FC } from 'react'
+import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
+import { ErrorMessage, Label, StyledInput } from './Input.styles'
 
 export interface InputProps {
   name: string
@@ -7,13 +8,25 @@ export interface InputProps {
   type: 'text'
   disabled?: boolean
   formProps: UseFormRegisterReturn
+  error?: FieldError | undefined
 }
 
-export const Input: FC<InputProps> = ({ name, label, type, disabled = false, formProps }) => {
+export const Input: FC<InputProps> = ({ name, label, type, disabled = false, formProps, error }) => {
   return (
     <>
-      <label htmlFor={name}>{label}</label>
-      <input {...formProps} id={name} name={name} type={type} disabled={disabled} />
+      <Label htmlFor={name} $disabled={disabled}>
+        {label}
+      </Label>
+      <StyledInput
+        {...formProps}
+        id={name}
+        name={name}
+        type={type}
+        disabled={disabled}
+        spellcheck='false'
+        $isInvalid={error != null}
+      />
+      {error != null && <ErrorMessage>{error.message}</ErrorMessage>}
     </>
   )
 }
