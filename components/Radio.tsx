@@ -14,7 +14,7 @@ export interface RadioProps {
 
 export const Radio: FC<RadioProps> = ({ name, label, options, disabled = false, formProps, error, qaType }) => {
   return (
-    <>
+    <div data-qa-type={qaType}>
       <Text $disabled={disabled}>{label}</Text>
       <Options>
         {options.map((option) => (
@@ -26,13 +26,12 @@ export const Radio: FC<RadioProps> = ({ name, label, options, disabled = false, 
               name={name}
               value={option.value}
               disabled={disabled}
-              data-qa-type={qaType}
             />
             <Label htmlFor={`${name}:${option.value}`}>{option.label}</Label>
           </Option>
         ))}
       </Options>
       {error != null && <ErrorMessage>{error.message}</ErrorMessage>}
-    </>
+    </div>
   )
 }
