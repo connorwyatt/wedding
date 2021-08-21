@@ -22,7 +22,7 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
     }) === 'true'
 
   return (
-    <Section key={invitee.id} heading={invitee.name ?? 'Plus One'} data-qa-type='inviteeRsvpFormSection'>
+    <Section key={invitee.id} heading={invitee.name ?? 'Plus One'} qaType='inviteeRsvpFormSection'>
       <Radio
         formProps={register(`invitees.${invitee.id}.attending`, {
           required: 'You must let us know if you are attending',
