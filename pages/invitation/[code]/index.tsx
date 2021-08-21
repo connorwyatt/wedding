@@ -72,7 +72,7 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
             Would like to invite {invitation.addressedTo} to join them to celebrate their marriage
           </SectionText>
 
-          <SectionHeading>19.03.2022</SectionHeading>
+          <SectionHeading data-qa-type='date'>19.03.2022</SectionHeading>
 
           <SectionText data-qa-type='dayTimings'>
             {invitation.type === 'fullDay' ? (
