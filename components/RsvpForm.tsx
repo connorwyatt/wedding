@@ -64,6 +64,7 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
             label='Contact information (optional)'
             type='text'
             error={errors?.contactInformation}
+            qaType='contextInformationInput'
           />
         </Stack>
 

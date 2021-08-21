@@ -9,9 +9,10 @@ export interface InputProps {
   disabled?: boolean
   formProps: UseFormRegisterReturn
   error?: FieldError | undefined
+  qaType: string
 }
 
-export const Input: FC<InputProps> = ({ name, label, type, disabled = false, formProps, error }) => {
+export const Input: FC<InputProps> = ({ name, label, type, disabled = false, formProps, error, qaType }) => {
   return (
     <>
       <Label htmlFor={name} $disabled={disabled}>
@@ -25,6 +26,7 @@ export const Input: FC<InputProps> = ({ name, label, type, disabled = false, for
         disabled={disabled}
         spellcheck='false'
         $isInvalid={error != null}
+        data-qa-type={qaType}
       />
       {error != null && <ErrorMessage>{error.message}</ErrorMessage>}
     </>
