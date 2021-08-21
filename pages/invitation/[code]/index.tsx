@@ -68,13 +68,13 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
         <Stack size='standard'>
           <Title />
 
-          <SectionText>
+          <SectionText data-qa-type='invitationDescription'>
             Would like to invite {invitation.addressedTo} to join them to celebrate their marriage
           </SectionText>
 
           <SectionHeading>19.03.2022</SectionHeading>
 
-          <SectionText>
+          <SectionText data-qa-type='dayTimings'>
             {invitation.type === 'fullDay' ? (
               <>
                 <Emphasis>4pm</Emphasis> Ceremony, <Emphasis>7pm</Emphasis> Reception
@@ -86,7 +86,7 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
             )}
           </SectionText>
 
-          <SectionText>
+          <SectionText data-qa-type='location'>
             at <Emphasis>Wootton Park</Emphasis>
             <br />
             Wootton Wawen, Henley-in-Arden, B95 6HJ
@@ -104,7 +104,7 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
 
       {!responseReceived && (
         <PaddedContainer>
-          <SectionText>
+          <SectionText data-qa-type='rsvpDate'>
             <Link href={`/invitation/${invitation.code}/rsvp`}>
               <a>RSVP</a>
             </Link>{' '}

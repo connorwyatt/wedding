@@ -22,7 +22,7 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
     }) === 'true'
 
   return (
-    <Section key={invitee.id} heading={invitee.name ?? 'Plus One'}>
+    <Section key={invitee.id} heading={invitee.name ?? 'Plus One'} data-qa-type='inviteeRsvpFormSection'>
       <Radio
         formProps={register(`invitees.${invitee.id}.attending`, {
           required: 'You must let us know if you are attending',
@@ -34,6 +34,7 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
           { label: 'No', value: 'false' },
         ]}
         error={errors?.attending}
+        qaType='attendingRadioOption'
       />
 
       <Radio
@@ -58,6 +59,7 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
         ]}
         disabled={!attending}
         error={errors?.foodOption}
+        qaType='foodOptionRadioOption'
       />
 
       <Input
@@ -69,6 +71,7 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
         type='text'
         disabled={!attending}
         error={errors?.dietaryNotes}
+        qaType='dietaryInformationInput'
       />
     </Section>
   )
