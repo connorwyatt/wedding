@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { SubmitHandler, useForm, useFormState } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { Button } from './Button.styles'
 import { Input } from './Input'
 import { InviteeRsvpFormSection } from './InviteeRsvpFormSection'

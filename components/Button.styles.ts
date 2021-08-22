@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { boxShadow, textStyle } from 'styles/helpers'
 import { white } from 'styles/theme'
 
