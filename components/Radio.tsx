@@ -9,12 +9,12 @@ export interface RadioProps {
   disabled?: boolean
   formProps: UseFormRegisterReturn
   error?: FieldError | undefined
-  qaType: string
+  testId: string
 }
 
-export const Radio: FC<RadioProps> = ({ name, label, options, disabled = false, formProps, error, qaType }) => {
+export const Radio: FC<RadioProps> = ({ name, label, options, disabled = false, formProps, error, testId }) => {
   return (
-    <div data-qa-type={qaType}>
+    <div data-test-id={testId}>
       <Text $disabled={disabled}>{label}</Text>
       <Options>
         {options.map((option) => (

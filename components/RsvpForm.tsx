@@ -64,12 +64,12 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
             label='Contact information (optional)'
             type='text'
             error={errors?.contactInformation}
-            qaType='contactInformationInput'
+            testId='contactInformationInput'
           />
         </Stack>
 
         <SectionText>
-          <Button type='submit' disabled={isSubmitting}>
+          <Button type='submit' disabled={isSubmitting} data-test-id='submitButton'>
             {isSubmitting ? 'Responding...' : 'Respond'}
           </Button>
         </SectionText>
