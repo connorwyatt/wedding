@@ -4,11 +4,11 @@ import { Stack } from './Stack'
 
 interface Props {
   heading: string
-  qaType?: string
+  testId?: string
 }
 
-export const Section: FC<Props> = ({ heading, children, qaType }) => (
-  <div data-qa-type={qaType}>
+export const Section: FC<Props> = ({ heading, children, testId }) => (
+  <div data-test-id={testId}>
     <Stack size='standard'>
       <SectionHeading as='h2'>{heading}</SectionHeading>
       {children}
