@@ -82,7 +82,7 @@ export const theme: DefaultTheme = {
       ...paragraphText,
       fontSize: '1.5rem',
       fontWeight: '700',
-      letterSpacing: '0.3em',
+      letterSpacing: '0.1em',
     },
     subtext: {
       ...paragraphText,
