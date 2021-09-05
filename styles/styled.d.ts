@@ -44,6 +44,7 @@ export interface TextStyle {
   fontStyle: 'normal' | 'italic'
   fontWeight: string
   letterSpacing: string
+  textTransform: string
 }
 
 export interface Typography {
