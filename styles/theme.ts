@@ -17,7 +17,8 @@ const paragraphText: TextStyle = {
   fontSize: '1rem',
   fontStyle: 'normal',
   fontWeight: '300',
-  letterSpacing: '0.15em',
+  letterSpacing: '0.05em',
+  textTransform: 'uppercase',
 }
 
 const titleFontFamily = '"Flanella", cursive'
@@ -27,6 +28,7 @@ const titleText: TextStyle = {
   fontStyle: 'normal',
   fontWeight: '400',
   letterSpacing: 'normal',
+  textTransform: 'none',
 }
 
 export const theme: DefaultTheme = {

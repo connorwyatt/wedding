@@ -7,4 +7,5 @@ export const textStyle = (style: TextStyle): SimpleInterpolation => css`
   font-style: ${style.fontStyle};
   font-weight: ${style.fontWeight};
   letter-spacing: ${style.letterSpacing};
+  text-transform: ${style.textTransform};
 `
