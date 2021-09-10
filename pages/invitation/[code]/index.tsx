@@ -6,7 +6,7 @@ import { FC, useState } from 'react'
 import { Button } from 'components/Button.styles'
 import { Map } from 'components/Map'
 import { PaddedContainer } from 'components/PaddedContainer.styles'
-import { Emphasis, SectionHeading, SectionText } from 'components/SectionText.styles'
+import { Emphasis, SectionHeading, SectionText, SectionTextSmall } from 'components/SectionText.styles'
 import { Stack } from 'components/Stack'
 import { ThanksForRsvpBanner } from 'components/ThanksForRsvpBanner'
 import { Title } from 'components/Title'
@@ -97,21 +97,39 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
               {showMap ? 'Hide map' : 'Show map'}
             </Button>
           </SectionText>
+
+          <SectionTextSmall data-test-id='guestInformation'>
+            You can also view the{' '}
+            <a href='https://www.woottonparkweddings.co.uk/guest-info' data-test-id='guestInformationLink'>
+              guest information from our venue
+            </a>
+            .
+          </SectionTextSmall>
         </Stack>
       </PaddedContainer>
 
       {showMap && <Map />}
 
-      {!responseReceived && (
-        <PaddedContainer>
-          <SectionText data-test-id='rsvpDate'>
-            <Link href={`/invitation/${invitation.code}/rsvp`}>
-              <a data-test-id='rsvpLink'>RSVP</a>
-            </Link>{' '}
-            by <Emphasis>{responseRequiredByDate}</Emphasis>
-          </SectionText>
-        </PaddedContainer>
-      )}
+      <PaddedContainer>
+        <Stack size='standard'>
+          {!responseReceived && (
+            <SectionText data-test-id='rsvpDate'>
+              <Link href={`/invitation/${invitation.code}/rsvp`}>
+                <a data-test-id='rsvpLink'>RSVP</a>
+              </Link>{' '}
+              by <Emphasis>{responseRequiredByDate}</Emphasis>
+            </SectionText>
+          )}
+
+          <SectionTextSmall data-test-id='contactInformation'>
+            Any queries, feel free to contact us at{' '}
+            <a href='mailto:connorwyatt1@gmail.com' data-test-id='contactInformationEmail'>
+              connorwyatt1@gmail.com
+            </a>
+            .
+          </SectionTextSmall>
+        </Stack>
+      </PaddedContainer>
     </>
   )
 }

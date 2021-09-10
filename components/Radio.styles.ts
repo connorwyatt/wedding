@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { textStyle } from 'styles/helpers'
+import { white } from 'styles/theme'
 
 export interface TextProps {
   $disabled: boolean
@@ -46,6 +47,7 @@ export const Label = styled.label`
   transition: opacity 0.2s ease-in-out;
 
   &:before {
+    background-color: ${white};
     border: 1px solid ${({ theme }) => theme.colors.separators};
     border-radius: 100%;
     content: '';

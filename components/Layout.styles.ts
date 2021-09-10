@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Paper = styled.div`
   ${({ theme }) => boxShadow(theme.shadows.paper)};
-  background-color: ${({ theme }) => theme.colors.paper};
+  background-image: url('/images/white-card-stock-paper-texture.png');
   border-radius: 1px;
   overflow: hidden;
 `

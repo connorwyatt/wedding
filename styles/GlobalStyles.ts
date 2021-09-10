@@ -30,7 +30,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    ${({ theme }) => textStyle(theme.typography.paragraphEmphasis)};
     color: ${({ theme }) => theme.colors.links.normal};
 
     &:hover,

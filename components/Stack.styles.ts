@@ -12,7 +12,7 @@ interface StackItemProps {
 const sizes = {
   small: '0.5rem',
   standard: '1rem',
-  large: '2rem',
+  large: '3rem',
 }
 
 export const StackItem = styled.div<StackItemProps>`
