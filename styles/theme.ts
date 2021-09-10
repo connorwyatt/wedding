@@ -17,7 +17,7 @@ const paragraphText: TextStyle = {
   fontSize: '1rem',
   fontStyle: 'normal',
   fontWeight: '300',
-  letterSpacing: '0.05em',
+  letterSpacing: '0.075em',
   textTransform: 'uppercase',
 }
 
@@ -78,11 +78,17 @@ export const theme: DefaultTheme = {
       ...paragraphText,
       fontWeight: '700',
     },
+    paragraphSmall: { ...paragraphText, fontSize: '0.8rem' },
+    paragraphSmallEmphasis: {
+      ...paragraphText,
+      fontSize: '0.8rem',
+      fontWeight: '700',
+    },
     sectionHeading: {
       ...paragraphText,
       fontSize: '1.5rem',
       fontWeight: '700',
-      letterSpacing: '0.1em',
+      letterSpacing: '0.15em',
     },
     subtext: {
       ...paragraphText,

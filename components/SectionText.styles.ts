@@ -14,6 +14,17 @@ export const SectionText = styled.p`
   }
 `
 
+export const SectionTextSmall = styled.p`
+  ${({ theme }) => textStyle(theme.typography.paragraphSmall)};
+  color: ${({ theme }) => theme.colors.text.secondary};
+  text-align: right;
+
+  & ${Emphasis} {
+    ${({ theme }) => textStyle(theme.typography.paragraphSmallEmphasis)};
+    color: ${({ theme }) => theme.colors.text.primary};
+  }
+`
+
 export const SectionHeading = styled(SectionText)`
   ${({ theme }) => textStyle(theme.typography.sectionHeading)};
   color: ${({ theme }) => theme.colors.text.primary};

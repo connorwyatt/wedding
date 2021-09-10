@@ -50,6 +50,8 @@ export interface TextStyle {
 export interface Typography {
   paragraph: TextStyle
   paragraphEmphasis: TextStyle
+  paragraphSmall: TextStyle
+  paragraphSmallEmphasis: TextStyle
   sectionHeading: TextStyle
   subtext: TextStyle
   title: TextStyle
