@@ -2,7 +2,7 @@ import { Children, FC } from 'react'
 import { Container, StackItem } from './Stack.styles'
 
 export interface StackProps {
-  size: 'standard' | 'large'
+  size: 'small' | 'standard' | 'large'
 }
 
 // This needs fixing, it uses the index as the key
