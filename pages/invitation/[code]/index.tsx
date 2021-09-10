@@ -114,10 +114,16 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
         <Stack size='standard'>
           {!responseReceived && (
             <SectionText data-test-id='rsvpDate'>
-              <Link href={`/invitation/${invitation.code}/rsvp`}>
-                <a data-test-id='rsvpLink'>RSVP</a>
-              </Link>{' '}
-              by <Emphasis>{responseRequiredByDate}</Emphasis>
+              <Stack size='small'>
+                <Link href={`/invitation/${invitation.code}/rsvp`}>
+                  <Button as='a' data-test-id='rsvpLink'>
+                    RSVP
+                  </Button>
+                </Link>
+                <span>
+                  by <Emphasis>{responseRequiredByDate}</Emphasis>
+                </span>
+              </Stack>
             </SectionText>
           )}
 

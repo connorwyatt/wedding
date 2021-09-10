@@ -1,3 +1,4 @@
+import { lighten } from 'polished'
 import styled from 'styled-components'
 import { boxShadow, textStyle } from 'styles/helpers'
 import { white } from 'styles/theme'
@@ -16,5 +17,12 @@ export const Button = styled.button`
   &[disabled] {
     cursor: default;
     opacity: 0.3;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: ${({ theme }) => lighten(0.1, theme.colors.text.primary)};
+    color: ${white};
   }
 `
