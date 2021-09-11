@@ -6,7 +6,7 @@ export const white = '#ffffff'
 export const black = '#000000'
 export const transparent = 'transparent'
 
-const primaryColor = '#308fff'
+const primaryColor = '#e895bc'
 
 const standardShadowColor = transparentize(0.75, black)
 const darkShadowColor = transparentize(0.5, black)
@@ -35,13 +35,13 @@ export const theme: DefaultTheme = {
   colors: {
     background: lighten(0.2, black),
     banner: {
-      background: primaryColor,
+      background: lighten(0.1, primaryColor),
       text: white,
     },
     error: '#db3131',
     links: {
       normal: primaryColor,
-      focus: lighten(0.15, primaryColor),
+      focus: darken(0.1, primaryColor),
     },
     paper: darken(0.02, white),
     separators: transparentize(0.85, black),
