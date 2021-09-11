@@ -1,4 +1,4 @@
-import { darken, lighten, transparentize } from 'polished'
+import { darken, lighten, saturate, transparentize } from 'polished'
 import { DefaultTheme } from 'styled-components'
 import { TextStyle } from './styled'
 
@@ -35,7 +35,7 @@ export const theme: DefaultTheme = {
   colors: {
     background: lighten(0.2, black),
     banner: {
-      background: lighten(0.1, primaryColor),
+      background: saturate(0.5, darken(0.3, primaryColor)),
       text: white,
     },
     error: '#db3131',
