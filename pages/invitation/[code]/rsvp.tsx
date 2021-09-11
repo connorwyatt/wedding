@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { FC } from 'react'
 import { PaddedContainer } from 'components/PaddedContainer.styles'
 import { RsvpForm } from 'components/RsvpForm'
+import { SakuraContainer } from 'components/SakuraContainer.styles'
 import { Stack } from 'components/Stack'
 import { Title } from 'components/Title'
 import { responseRequiredByDate } from 'config/responseRequiredByDate'
@@ -61,7 +62,7 @@ export interface RsvpProps {
 }
 
 const Rsvp: FC<RsvpProps> = ({ invitation }) => (
-  <>
+  <SakuraContainer>
     <Head>
       <title>RSVP for {invitation.addressedTo} | Connor &amp; Laura's Wedding</title>
     </Head>
@@ -73,7 +74,7 @@ const Rsvp: FC<RsvpProps> = ({ invitation }) => (
         <RsvpForm invitation={invitation} />
       </Stack>
     </PaddedContainer>
-  </>
+  </SakuraContainer>
 )
 
 export default Rsvp
