@@ -9,10 +9,10 @@ export const Container = styled.div`
 
 export const Paper = styled.div`
   ${({ theme }) => boxShadow(theme.shadows.paper)};
-  background-image: url('/images/sakura-branch.png'), url('/images/white-card-stock-paper-texture.png');
-  background-position: top 4rem left -4rem, top;
+  background: url('/images/sakura-branch.png'), url('/images/paper.png'), ${({ theme }) => theme.colors.paper};
+  background-position: top 4rem left 0, top;
   background-repeat: no-repeat, repeat;
-  background-size: 40rem, 100%;
+  background-size: 100%, 100%;
   border-radius: 1px;
   overflow: hidden;
 `
