@@ -53,7 +53,7 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
         <Stack size='standard'>
           <SectionText>
             We're hoping that there are no issues, but just in case anything changes feel free to let us know how to
-            contact you.
+            contact you if this is different to how you received the invitation.
           </SectionText>
 
           <Input
