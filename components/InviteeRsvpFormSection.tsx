@@ -79,8 +79,9 @@ export const InviteeRsvpFormSection: FC<InviteeRsvpFormSectionProps> = ({ contro
           />
         </Stack>
       ) : (
-        <SectionText>
-          We have them down as not requiring any food, let us know if this is not correct and we'll change it.
+        <SectionText data-test-id='requiresNoFoodContent'>
+          We have {invitee.name} down as not requiring any food, let us know if this isn't the case and we'll correct
+          it.
         </SectionText>
       )}
     </Section>
