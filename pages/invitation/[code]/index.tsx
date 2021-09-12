@@ -71,7 +71,7 @@ const InvitationPage: FC<InvitationProps> = ({ invitation, responseRequiredByDat
             <Title />
 
             <SectionText data-test-id='invitationDescription'>
-              Would like to invite {invitation.addressedTo} to join them to celebrate their marriage
+              Would like to invite {invitation.addressedTo} to join them in celebration of their marriage
             </SectionText>
 
             <SectionHeading data-test-id='date'>19.03.2022</SectionHeading>

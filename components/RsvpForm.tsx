@@ -51,17 +51,12 @@ export const RsvpForm: FC<RsvpFormProps> = ({ invitation }) => {
         ))}
 
         <Stack size='standard'>
-          <SectionText>
-            We're hoping that there are no issues, but just in case anything changes feel free to let us know how to
-            contact you if this is different to how you received the invitation.
-          </SectionText>
-
           <Input
             formProps={register('contactInformation', {
               maxLength: { value: 250, message: 'Please enter less than 250 characters.' },
             })}
             name='contactInformation'
-            label='Contact information (optional)'
+            label='Preferred contact information (optional)'
             type='text'
             error={errors?.contactInformation}
             testId='contactInformationInput'
